@@ -5,7 +5,35 @@ import java.util.Map;
 
 public enum WithIntValue {
 
-	A (0), B (1), C (3), D (4);
+	A (0) {
+        @Override
+        public void testAbstract() {
+            // A's implementation
+            System.out.println("I'm " + this.name() + " - this.name()");
+        }
+    },
+
+    B (1) {
+        @Override
+        public void testAbstract() {
+            // B's implementation
+            System.out.println("I'm " + this.toString() + " - this.toString()");
+        }
+    },
+
+    C (3) {
+        @Override
+        public void testAbstract() {
+            // C's implementation
+        }
+    },
+
+    D (4) {
+        @Override
+        public void testAbstract() {
+            // D's implementation
+        }
+    };
 	
 	private final int value;
 	
@@ -16,8 +44,9 @@ public enum WithIntValue {
             map.put(wEnum.value, wEnum);
         }
     }
-	
-	private WithIntValue(int v) {
+
+    // Constructor must be private or package-protected / default
+	WithIntValue(int v) {
 		value = v;
 	}
 	
@@ -28,4 +57,6 @@ public enum WithIntValue {
 	public static WithIntValue getFromValue(int v) {
 		return map.get(v);
 	}
+
+    public abstract void testAbstract();
 }
