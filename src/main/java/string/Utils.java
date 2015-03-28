@@ -15,4 +15,22 @@ public class Utils {
 		return new String(array);
 	}
 
+    public static void main(String[] args) {
+        // run with -ea
+        String a = "asdf";
+        String b = "asdf";
+
+        assert a == b;
+        assert a.equals(b);
+
+        String c = new String("asdf");
+        String d = new String("asdf");
+
+        assert c != d;
+        assert c.equals(d);
+
+        assert a != d;
+        assert a.equals(d);
+    }
+
 }
