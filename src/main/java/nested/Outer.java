@@ -20,10 +20,14 @@ public class Outer {
 	}
 	
 	class Inner {
+
+        private int c = 7;
+
 		private void sayHello() {
 			System.out.println("inner: " + c);
 			c = -3;
 			System.out.println("inner modified: " + c);
+            System.out.println("inner outer: " + Outer.this.c);
 		}
 	}
 	

@@ -13,7 +13,12 @@ public class Main {
 		System.out.println(Integer.toString(0^-1,2));
 		
 		System.out.println(Integer.toBinaryString(1 << 2));
-		
-	}
+
+        System.out.println(Integer.toBinaryString(0));
+        System.out.println(Integer.toBinaryString(~0));
+
+        System.out.println(Integer.toBinaryString(-4));
+
+    }
 
 }

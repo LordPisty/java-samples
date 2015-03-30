@@ -17,6 +17,17 @@ public class Main {
         System.out.println(divide(4, -2));
         System.out.println(divide(-8, -4));
 
+        System.out.println(gcd(3,4));
+        System.out.println(gcd(4,3));
+
+        System.out.println(3%4);
+
+    }
+
+    public static int gcd(final int a, final int b) {
+        if (a == 0) return b;
+        if (b == 0) return a;
+        return a > b ? gcd(a%b, b) : gcd(a, b%a);
     }
 
     public static int subtract(final int a, final int b) {
