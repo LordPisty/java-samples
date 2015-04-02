@@ -5,4 +5,14 @@ package interfaces;
  */
 @FunctionalInterface
 public interface FunI {
+
+    int functionalMethod(int i);
+
+    default int defaultMethod(int i) {
+        return i*3;
+    }
+
+    static int staticMethod(int i) {
+        return i*4;
+    }
 }
