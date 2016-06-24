@@ -7,10 +7,12 @@ import java.util.Arrays;
  */
 public final class Radix {
 
+    // LSD
     public static void sort( int[] a)
     {
         int i, m = a[0], exp = 1, n = a.length;
-        int[] b = new int[10];
+        int[] b = new int[n];
+        // m is max
         for (i = 1; i < n; i++)
             if (a[i] > m)
                 m = a[i];
@@ -39,7 +41,7 @@ public final class Radix {
 
     public static void main(String... args) {
         // input > 0
-        int[] array = {14,25,12,27,13,26,16,29,29,11};
+        int[] array = {14,25,12,27,13,26,16,29,29,11,12};
         System.out.println(Arrays.toString(array));
         sort(array);
         System.out.println(Arrays.toString(array));

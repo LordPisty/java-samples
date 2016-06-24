@@ -47,7 +47,7 @@ public class Utils {
 		test[0] = new C(4);
 		
 		// Exception in thread "main" java.lang.ArrayStoreException: variance.Utils$B
-		test[1] = new B(5);
+		//test[1] = new B(5);
 		
 		// compiler error
 		//test[2] = new A(3);
@@ -55,6 +55,7 @@ public class Utils {
 		//------------
 		// variance generics
 		List<String> aList = new ArrayList<String>();
+		aList.add("test");
 		List<? extends Object> covariantList = aList;
 		List<? super String> contravariantList = aList;
 		

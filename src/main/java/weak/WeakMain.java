@@ -1,12 +1,21 @@
 package weak;
 
+import java.lang.ref.PhantomReference;
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.SoftReference;
 import java.util.WeakHashMap;
 
 /**
  * Created by crespis on 3/31/2015.
  */
+// soft: can't prevent GC, collected when memory is really needed
+// weak: can't prevent GC, collected at next GC
+// pahntom: get => null, when create pass in ReferenceQueue ==> use phantom ref to check when obj is GCd (enqueued after GCd)
 public class WeakMain {
     public static void main(String[] args) {
+        SoftReference<Data> soft = new SoftReference<Data>(null);
+        PhantomReference<Data> phantom = new PhantomReference<>(null, new ReferenceQueue<>());
+
         WeakHashMap<Data, String> map = new WeakHashMap<Data, String>();
         Data dataObj = new Data("foo");
         Data dataObj2 = new Data("buz");
