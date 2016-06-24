@@ -26,6 +26,7 @@ public class CircularArray<T> implements Iterable<T>{
             this.head = head;
         }
 
+        // fail fast: best-effort basis
         private void checkCurrentHead() {
             if (head != CircularArray.this.head) {
                 throw new ConcurrentModificationException();

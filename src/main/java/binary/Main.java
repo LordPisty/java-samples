@@ -19,6 +19,11 @@ public class Main {
 
         System.out.println(Integer.toBinaryString(-4));
 
+		System.out.println(Integer.toBinaryString(32 >> 2));
+		System.out.println(Integer.toBinaryString(32 >>> 2));
+		System.out.println(Integer.toBinaryString(-32 >> 2));
+		System.out.println(Integer.toBinaryString(-32 >>> 2));
+
     }
 
 }
